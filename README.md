@@ -6,6 +6,8 @@
 
 > A visual, interactive developer dashboard for inspecting, analyzing, and exploring Symfony routes with real-time insights and API explorer capabilities.
 
+<img width="1366" height="927" alt="Thumbnail" src="https://github.com/user-attachments/assets/2a46671d-6118-41c2-8fce-3fe40aa43a35" />
+
 ## Why This Bundle?
 
 While Symfony provides `bin/console debug:router` and the Symfony Profiler for route inspection, **Symfony Route Inspector** takes it several steps further by providing:

@@ -8,16 +8,48 @@
 
 ## Why This Bundle?
 
-While Symfony provides `bin/console debug:router` and other tools for route inspection, **Symfony Route Inspector** takes it several steps further by providing:
+While Symfony provides `bin/console debug:router` and the Symfony Profiler for route inspection, **Symfony Route Inspector** takes it several steps further by providing:
 
-- **Visual Interactive Dashboard** - Beautiful, modern UI with real-time route exploration
+- **Visual Interactive Dashboard** - Beautiful, modern UI with dark/light theme and real-time route exploration
+- **Route Graph Visualization** - Interactive hierarchical tree view showing your entire route structure with zoom and pan
+- **SQL Query Tracking** - Real-time SQL query monitoring with N+1 detection, slow query identification, and duplicate query tracking
+- **Performance Issue Detection** - Automatically identifies slow routes and N+1 query problems with severity ratings
 - **Grouped Route Visualization** - Routes organized by bundles/controllers for better architectural understanding
 - **Usage Analytics** - Track endpoint usage with heatmaps and performance metrics (mock data included, ready for real integration)
-- **Dependency Insights** - See middleware, security roles, and service dependencies at a glance
-- **API Explorer** - Interactive interface to test routes and view response schemas
+- **HTTP Method Badges** - Instantly see which HTTP methods (GET, POST, PUT, DELETE, PATCH) each route supports
 - **Developer-Friendly** - Built specifically for development environments with zero configuration
 
-This isn't just another route listing tool - it's a comprehensive route analysis dashboard that provides architectural insights no standard Symfony tool offers visually.
+This isn't just another route listing tool - it's a comprehensive route analysis and performance monitoring dashboard that provides architectural insights no standard Symfony tool offers visually.
+
+## Symfony Route Inspector vs Symfony Profiler
+
+| Feature | Symfony Route Inspector | Symfony Profiler |
+|---------|------------------------|------------------|
+| **Route Visualization** | ✅ Interactive graph with hierarchy | ❌ No visual representation |
+| **All Routes Overview** | ✅ Single dashboard view of all routes | ❌ Shows only current request's route |
+| **Route Grouping** | ✅ Grouped by bundles/controllers | ❌ No grouping |
+| **SQL Query Tracking** | ✅ Aggregated view across requests | ✅ Per-request only |
+| **N+1 Query Detection** | ✅ Automatic detection with alerts | ⚠️ Manual inspection required |
+| **Performance Issues** | ✅ Dashboard with severity ratings | ❌ Not available |
+| **Route Graph** | ✅ Interactive tree with zoom/pan | ❌ Not available |
+| **Search & Filter** | ✅ Advanced filtering by method, bundle, name | ❌ Limited search |
+| **Dark/Light Theme** | ✅ Toggle between themes | ❌ Single theme |
+| **Real-time Statistics** | ✅ Route counts, methods breakdown | ❌ Not available |
+| **Zero Configuration** | ✅ Works out of the box | ✅ Built-in |
+| **Export Capabilities** | ✅ SVG export for graphs | ❌ Not available |
+
+### Why Choose Symfony Route Inspector?
+
+**Symfony Profiler** is excellent for debugging individual requests, but **Symfony Route Inspector** provides:
+
+1. **Complete Application Overview** - See ALL your routes at once, not just the current request
+2. **Proactive Problem Detection** - Identifies N+1 queries and slow routes before they become issues
+3. **Better Route Organization** - Understand your application architecture through visual grouping
+4. **Performance Monitoring** - Track query performance across all endpoints in one place
+5. **Modern UX** - Beautiful, intuitive interface that developers love to use
+6. **Architectural Insights** - Route hierarchy visualization shows how your application is structured
+
+**Use Both Together**: Symfony Profiler for per-request debugging + Route Inspector for application-wide route analysis and performance monitoring.
 
 ---
 

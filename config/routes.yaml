@@ -1,0 +1,4 @@
+route_inspector:
+    resource: '../src/Controller/'
+    type: attribute
+    prefix: '/_route_inspector'

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ asset('bundles/routeinspector/dashboard.css') }}?v={{ random() }}">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        /* Initial loading styles - inline for immediate rendering */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-size: 1.5rem;
+            color: #64748b;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #1e293b;
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="route-inspector-app">
+        <div class="loading">
+            <div class="spinner"></div>
+            <span>Loading Dashboard...</span>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initDashboard } from '{{ asset('bundles/routeinspector/dashboard.js') }}?v={{ random() }}';
+
+        // Initialize dashboard with API endpoints
+        initDashboard({
+            routes: '{{ path('route_inspector_api_routes') }}',
+            grouped: '{{ path('route_inspector_api_routes_grouped') }}',
+            tree: '{{ path('route_inspector_api_routes_tree') }}',
+            statistics: '{{ path('route_inspector_api_statistics') }}',
+            analytics: '{{ path('route_inspector_api_analytics') }}',
+            sqlQueries: '{{ path('route_inspector_api_sql_queries') }}',
+            performanceIssues: '{{ path('route_inspector_api_performance_issues') }}'
+        });
+    </script>
+</body>
+</html>

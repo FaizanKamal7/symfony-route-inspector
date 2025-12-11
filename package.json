@@ -1,0 +1,21 @@
+{
+  "name": "symfony-route-inspector",
+  "version": "1.0.0",
+  "description": "Visual Symfony route inspector + API explorer frontend assets",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Using CDN Vue.js - no build step required'",
+    "build": "echo 'Using CDN Vue.js - no build step required'"
+  },
+  "keywords": [
+    "symfony",
+    "route",
+    "inspector",
+    "dev-tools",
+    "dashboard"
+  ],
+  "author": "Faizan Kamal <faizankhan619.fk@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

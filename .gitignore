@@ -1,0 +1,33 @@
+# Composer
+/vendor/
+composer.lock
+
+# PHPUnit
+/phpunit.xml
+/.phpunit.result.cache
+
+# IDE
+/.idea/
+/.vscode/
+/.claude/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+
+# Node (if needed in future)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build artifacts
+/build/
+/dist/

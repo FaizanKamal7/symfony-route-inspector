@@ -1,0 +1,42 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # Service for route inspection
+    FaizanKamal\RouteInspector\Service\RouteInspectorService:
+        arguments:
+            $router: '@router'
+            $container: '@service_container'
+
+    # SQL Query Collector
+    FaizanKamal\RouteInspector\Service\SqlQueryCollector:
+        arguments:
+            $profiler: '@?profiler'
+
+    # Route Performance Service
+    FaizanKamal\RouteInspector\Service\RoutePerformanceService:
+        arguments:
+            $cache: '@?cache.app'
+            $routeInspectorService: '@FaizanKamal\RouteInspector\Service\RouteInspectorService'
+
+    # Route Performance Event Subscriber
+    FaizanKamal\RouteInspector\EventSubscriber\RoutePerformanceSubscriber:
+        arguments:
+            $cache: '@?cache.app'
+        tags:
+            - { name: kernel.event_subscriber }
+
+    # Dashboard controller
+    FaizanKamal\RouteInspector\Controller\DashboardController:
+        tags: ['controller.service_arguments']
+        arguments:
+            $inspectorService: '@FaizanKamal\RouteInspector\Service\RouteInspectorService'
+            $sqlQueryCollector: '@FaizanKamal\RouteInspector\Service\SqlQueryCollector'
+            $performanceService: '@FaizanKamal\RouteInspector\Service\RoutePerformanceService'
+
+    # Twig extension
+    FaizanKamal\RouteInspector\Twig\RouteInspectorExtension:
+        tags: ['twig.extension']
+        arguments:
+            $inspectorService: '@FaizanKamal\RouteInspector\Service\RouteInspectorService'
